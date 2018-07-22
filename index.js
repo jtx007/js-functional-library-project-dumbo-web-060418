@@ -79,6 +79,32 @@ fi = (function() {
     },
     flatten: function(array, shallow){
 
+    },
+    keys: function(object) {
+      const keys = []
+      for (const key in object) {
+        keys.push(key)
+      }
+      return keys
+    },
+    values: function (object) {
+      const values = []
+      for (const key in object) {
+        values.push(object[key])
+      }
+      return values
+    },
+    functions: function(fi) {
+      const namesOfFunctions = []
+      for (const key in fi) {
+        if(typeof fi[key] === 'function') {
+          namesOfFunctions.push(fi[key].name)
+        }
+      }
+      return namesOfFunctions
+    },
+    uniq: function () {
+      
     }
   }
 })()
